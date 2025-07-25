@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package labbb1;
-
 public class Ticket {
 
     private String nombre;
@@ -16,7 +15,6 @@ public class Ticket {
         this.monto = monto;
         this.montooriginal = montooriginal;
         this.espalindromo = espalindromo;
-
     }
 
     public String getName() {
@@ -31,30 +29,21 @@ public class Ticket {
         return montooriginal;
     }
 
-    public boolean espalindrome(String nombre) {
-        boolean palin = true;
-        String vuelta = "";
-        for (int i = 0; i < nombre.length() / 2; i++) {
-            if (nombre.charAt(i) != nombre.charAt(nombre.length() - 1)) {
-                palin = false;
-            }
+    public boolean isPalindrome() {
+        return espalindromo;
+    }
+
+    public String print() {
+        if (espalindromo) {
+            return "Nombre: " + nombre + "\n"
+                 + "Monto original: " + montooriginal + "\n"
+                 + "Monto pagado: " + monto + "\n"
+                 + "Se aplicó descuento:    SÍ";
+        } else {
+            return "Nombre: " + nombre + "\n"
+                 + "Monto original: " + montooriginal + "\n"
+                 + "Monto pagado: " + monto + "\n"
+                 + "Se aplicó descuento:    NO";
         }
-        return palin;
     }
-
-    public String print(boolean espalindrome) {
-        if(espalindrome){
-        return "Nombre: " + nombre + "\n"
-                + "Monto original: " + montooriginal+"\n"
-                + "Monto pagado: " + monto+"\n"
-                + "Se aplico descuento:    SI";
-        }else{
-        return "Nombre: " + nombre + "\n"
-                + "Monto original: " + montooriginal+"\n"
-                + "Monto pagado: " + monto+"\n"
-                + "Se aplico descuento:    NO";
-        }   
-    
-    }
-
 }
