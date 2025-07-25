@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainApp extends JFrame {
+
     private PalindromoAir air = new PalindromoAir();
     private JButton[] botonesAsientos = new JButton[30];
     private JTextField campoNombre = new JTextField();
@@ -33,7 +34,7 @@ public class MainApp extends JFrame {
                 consola.setText("Asiento seleccionado: #" + (asiento + 1));
             });
             botonesAsientos[i] = boton;
-            panelAsientos.add(boton); 
+            panelAsientos.add(boton);
         }
 
         JLabel labelNombre = new JLabel("Nombre:");
@@ -67,9 +68,10 @@ public class MainApp extends JFrame {
         searchBtn.setBounds(150, 320, 170, 30);
         add(searchBtn);
 
-        consola.setBounds(20, 370, 630, 160);
         consola.setEditable(false);
-        add(consola);
+        JScrollPane scroll = new JScrollPane(consola);
+        scroll.setBounds(20, 370, 630, 160);
+        add(scroll);
 
         sellBtn.addActionListener(e -> {
             String nombre = campoNombre.getText().trim();

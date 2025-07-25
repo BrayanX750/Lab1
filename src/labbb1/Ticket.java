@@ -8,7 +8,7 @@ public class Ticket {
     private String nombre;
     private double monto;
     private double montooriginal;
-    private boolean espalindromo;
+    private boolean espalindromo; 
 
     public Ticket(String nombre, double monto, double montooriginal, boolean espalindromo) {
         this.nombre = nombre;
