@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package labbb1;
+package labbb1; 
 
 public class PalindromoAir {
     private Ticket[] asientos = new Ticket[30];
@@ -55,6 +55,9 @@ public class PalindromoAir {
     }
 
    
+public Ticket[] getAsientos() {
+    return asientos;
+}
 
 
 }
