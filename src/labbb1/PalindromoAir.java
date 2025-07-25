@@ -7,6 +7,8 @@ package labbb1;
 public class PalindromoAir {
     private Ticket[] asientos = new Ticket[30];
 
+    
+    
     public int firstAvailable(int x) {
         if (x >= asientos.length) return -1;
         if (asientos[x] == null) return x;
@@ -58,12 +60,19 @@ public class PalindromoAir {
         return asientos;
     }
 
-    public String sellTicket(int asiento, String nombre) {
+   public String sellTicket(int asiento, String nombre) {
     if (asiento < 0 || asiento >= asientos.length) {
-        return "Numero de asiento invalido.";
+        return "Número de asiento inválido.";
     }
+
+    for (int i = 0; i < asientos.length; i++) {
+        if (asientos[i] != null && asientos[i].getName().equalsIgnoreCase(nombre)) {
+            return "Ese pasajero ya tiene un ticket en el asiento #" + (i + 1);
+        }
+    }
+
     if (asientos[asiento] != null) {
-        return "Ese asiento ya esta ocupado.";
+        return "Ese asiento ya está ocupado.";
     }
 
     boolean esPalin = isPalindromo(nombre);
@@ -73,8 +82,9 @@ public class PalindromoAir {
     Ticket t = new Ticket(nombre, total, original, esPalin);
     asientos[asiento] = t;
 
-    return "Ticket vendido en asiento #" + (asiento + 1) + " a " + nombre + ". Pago: $" + total;
+    return "Ticket vendido en asiento #" + (asiento + 1) + " a " + nombre + ". Pagó: $" + total;
 }
+
 
 
     public boolean cancelTicket(String nombre) {

@@ -25,38 +25,37 @@ public class MainApp extends JFrame {
         panelAsientos.setBounds(20, 20, 400, 200);
         add(panelAsientos);
 
-       JPanel leyenda = new JPanel();
-leyenda.setLayout(null);
-leyenda.setBounds(440, 20, 220, 100);
-add(leyenda);
+        JPanel leyenda = new JPanel();
+        leyenda.setLayout(null);
+        leyenda.setBounds(440, 20, 220, 100);
+        add(leyenda);
 
-JPanel verdeBox = new JPanel();
-verdeBox.setBackground(Color.GREEN);
-verdeBox.setBounds(10, 10, 20, 20);
-leyenda.add(verdeBox);
+        JPanel verdeBox = new JPanel();
+        verdeBox.setBackground(Color.GREEN);
+        verdeBox.setBounds(10, 10, 20, 20);
+        leyenda.add(verdeBox);
 
-JLabel verdeLabel = new JLabel("Asiento disponible");
-verdeLabel.setBounds(40, 10, 150, 20);
-leyenda.add(verdeLabel);
+        JLabel verdeLabel = new JLabel("Asiento disponible");
+        verdeLabel.setBounds(40, 10, 150, 20);
+        leyenda.add(verdeLabel);
 
-JPanel rojoBox = new JPanel();
-rojoBox.setBackground(Color.RED);
-rojoBox.setBounds(10, 35, 20, 20);
-leyenda.add(rojoBox);
+        JPanel rojoBox = new JPanel();
+        rojoBox.setBackground(Color.RED);
+        rojoBox.setBounds(10, 35, 20, 20);
+        leyenda.add(rojoBox);
 
-JLabel rojoLabel = new JLabel("Asiento ocupado");
-rojoLabel.setBounds(40, 35, 150, 20); 
-leyenda.add(rojoLabel);
+        JLabel rojoLabel = new JLabel("Asiento ocupado");
+        rojoLabel.setBounds(40, 35, 150, 20);
+        leyenda.add(rojoLabel);
 
-JPanel azulBox = new JPanel();
-azulBox.setBackground(Color.BLUE);
-azulBox.setBounds(10, 60, 20, 20);
-leyenda.add(azulBox);
+        JPanel azulBox = new JPanel();
+        azulBox.setBackground(Color.BLUE);
+        azulBox.setBounds(10, 60, 20, 20);
+        leyenda.add(azulBox);
 
-JLabel azulLabel = new JLabel("Nombre palindromo");
-azulLabel.setBounds(40, 60, 150, 20);
-leyenda.add(azulLabel);
-
+        JLabel azulLabel = new JLabel("Nombre palindromo");
+        azulLabel.setBounds(40, 60, 150, 20);
+        leyenda.add(azulLabel);
 
         for (int i = 0; i < 30; i++) {
             int asiento = i;
@@ -108,7 +107,7 @@ leyenda.add(azulLabel);
 
         sellBtn.addActionListener(e -> {
             String nombre = campoNombre.getText().trim();
-            if (asientoSeleccionado == -1) {
+            if (asientoSeleccionado == -1) { 
                 consola.setText("Seleccione un asiento.");
                 return;
             }
