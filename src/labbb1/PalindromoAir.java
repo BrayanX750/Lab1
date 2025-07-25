@@ -62,7 +62,7 @@ public class PalindromoAir {
 
    public String sellTicket(int asiento, String nombre) {
     if (asiento < 0 || asiento >= asientos.length) {
-        return "Número de asiento inválido.";
+        return "Número de asiento invalido.";
     }
 
     for (int i = 0; i < asientos.length; i++) {
@@ -72,7 +72,7 @@ public class PalindromoAir {
     }
 
     if (asientos[asiento] != null) {
-        return "Ese asiento ya está ocupado.";
+        return "Ese asiento ya esta ocupado.";
     }
 
     boolean esPalin = isPalindromo(nombre);
@@ -82,7 +82,7 @@ public class PalindromoAir {
     Ticket t = new Ticket(nombre, total, original, esPalin);
     asientos[asiento] = t;
 
-    return "Ticket vendido en asiento #" + (asiento + 1) + " a " + nombre + ". Pagó: $" + total;
+    return "Ticket vendido en el asiento #" + (asiento + 1) + " a " + nombre + ". pago: $" + total;
 }
 
 
