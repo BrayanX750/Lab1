@@ -33,17 +33,17 @@ public class Ticket {
         return espalindromo;
     }
 
-    public String print() {
+    public String print() { 
         if (espalindromo) {
             return "Nombre: " + nombre + "\n"
                  + "Monto original: " + montooriginal + "\n"
                  + "Monto pagado: " + monto + "\n"
-                 + "Se aplicó descuento:    SÍ";
+                 + "Se aplico descuento:    SI";
         } else {
             return "Nombre: " + nombre + "\n"
                  + "Monto original: " + montooriginal + "\n"
                  + "Monto pagado: " + monto + "\n"
-                 + "Se aplicó descuento:    NO";
+                 + "Se aplico descuento:    NO";
         }
     }
 }

@@ -25,6 +25,39 @@ public class MainApp extends JFrame {
         panelAsientos.setBounds(20, 20, 400, 200);
         add(panelAsientos);
 
+       JPanel leyenda = new JPanel();
+leyenda.setLayout(null);
+leyenda.setBounds(440, 20, 220, 100);
+add(leyenda);
+
+JPanel verdeBox = new JPanel();
+verdeBox.setBackground(Color.GREEN);
+verdeBox.setBounds(10, 10, 20, 20);
+leyenda.add(verdeBox);
+
+JLabel verdeLabel = new JLabel("Asiento disponible");
+verdeLabel.setBounds(40, 10, 150, 20);
+leyenda.add(verdeLabel);
+
+JPanel rojoBox = new JPanel();
+rojoBox.setBackground(Color.RED);
+rojoBox.setBounds(10, 35, 20, 20);
+leyenda.add(rojoBox);
+
+JLabel rojoLabel = new JLabel("Asiento ocupado");
+rojoLabel.setBounds(40, 35, 150, 20); 
+leyenda.add(rojoLabel);
+
+JPanel azulBox = new JPanel();
+azulBox.setBackground(Color.BLUE);
+azulBox.setBounds(10, 60, 20, 20);
+leyenda.add(azulBox);
+
+JLabel azulLabel = new JLabel("Nombre palindromo");
+azulLabel.setBounds(40, 60, 150, 20);
+leyenda.add(azulLabel);
+
+
         for (int i = 0; i < 30; i++) {
             int asiento = i;
             JButton boton = new JButton((i + 1) + "");
@@ -84,7 +117,7 @@ public class MainApp extends JFrame {
                 return;
             }
             if (air.getAsientos()[asientoSeleccionado] != null) {
-                consola.setText("Ese asiento ya está ocupado.");
+                consola.setText("Ese asiento ya esta ocupado.");
                 return;
             }
             boolean esPalin = air.isPalindromo(nombre);
@@ -100,13 +133,13 @@ public class MainApp extends JFrame {
 
         cancelBtn.addActionListener(e -> {
             String nombre = campoNombre.getText().trim();
-            int pos = air.searchPassenger(nombre, 0);
-            if (pos == -1) {
+            int posicion = air.searchPassenger(nombre, 0);
+            if (posicion == -1) {
                 consola.setText("Pasajero no encontrado.");
             } else {
-                air.getAsientos()[pos] = null;
-                botonesAsientos[pos].setBackground(Color.GREEN);
-                botonesAsientos[pos].setText((pos + 1) + "");
+                air.getAsientos()[posicion] = null;
+                botonesAsientos[posicion].setBackground(Color.GREEN);
+                botonesAsientos[posicion].setText((posicion + 1) + "");
                 consola.setText("Ticket cancelado para " + nombre);
             }
         });
@@ -131,11 +164,11 @@ public class MainApp extends JFrame {
 
         searchBtn.addActionListener(e -> {
             String nombre = campoNombre.getText().trim();
-            int pos = air.searchPassenger(nombre, 0);
-            if (pos == -1) {
+            int posicion = air.searchPassenger(nombre, 0);
+            if (posicion == -1) {
                 consola.setText("Pasajero no encontrado.");
             } else {
-                consola.setText("Pasajero " + nombre + " está en el asiento #" + (pos + 1));
+                consola.setText("Pasajero " + nombre + " esta en el asiento #" + (posicion + 1));
             }
         });
     }

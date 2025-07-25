@@ -7,21 +7,21 @@ package labbb1;
 public class PalindromoAir {
     private Ticket[] asientos = new Ticket[30];
 
-    public int firstAvailable(int index) {
-        if (index >= asientos.length) return -1;
-        if (asientos[index] == null) return index;
-        return firstAvailable(index + 1);
+    public int firstAvailable(int x) {
+        if (x >= asientos.length) return -1;
+        if (asientos[x] == null) return x;
+        return firstAvailable(x + 1);
     }
 
-    public int searchPassenger(String nombre, int index) {
-        if (index >= asientos.length) return -1;
-        if (asientos[index] != null && asientos[index].getName().equalsIgnoreCase(nombre)) return index;
-        return searchPassenger(nombre, index + 1);
+    public int searchPassenger(String nombre, int x) {
+        if (x >= asientos.length) return -1;
+        if (asientos[x] != null && asientos[x].getName().equalsIgnoreCase(nombre)) return x;
+        return searchPassenger(nombre, x + 1);
     }
 
     public boolean isPalindromo(String nombre) {
         nombre = nombre.toLowerCase().replaceAll("\\s+", "");
-        return isPalindromo(nombre, 0, nombre.length() - 1);
+        return isPalindromo(nombre, 0, nombre.length() - 1);   
     }
 
     private boolean isPalindromo(String nombre, int i, int j) {
@@ -60,10 +60,10 @@ public class PalindromoAir {
 
     public String sellTicket(int asiento, String nombre) {
     if (asiento < 0 || asiento >= asientos.length) {
-        return "Número de asiento inválido.";
+        return "Numero de asiento invalido.";
     }
     if (asientos[asiento] != null) {
-        return "Ese asiento ya está ocupado.";
+        return "Ese asiento ya esta ocupado.";
     }
 
     boolean esPalin = isPalindromo(nombre);
@@ -73,16 +73,16 @@ public class PalindromoAir {
     Ticket t = new Ticket(nombre, total, original, esPalin);
     asientos[asiento] = t;
 
-    return "Ticket vendido en asiento #" + (asiento + 1) + " a " + nombre + ". Pagó: $" + total;
+    return "Ticket vendido en asiento #" + (asiento + 1) + " a " + nombre + ". Pago: $" + total;
 }
 
 
     public boolean cancelTicket(String nombre) {
-        int pos = searchPassenger(nombre, 0);
-        if (pos == -1) {
+        int posicion = searchPassenger(nombre, 0);
+        if (posicion == -1) {
             return false;
         }
-        asientos[pos] = null;
+        asientos[posicion] = null;
         return true;
     }
 
